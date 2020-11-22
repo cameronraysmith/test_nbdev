@@ -1,6 +1,6 @@
 .ONESHELL:
 SHELL := /bin/bash
-SRC = $(wildcard ./*.ipynb)
+SRC = $(wildcard nbs/*.ipynb)
 
 all: test_nbdev docs
 
