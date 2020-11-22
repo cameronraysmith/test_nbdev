@@ -60,4 +60,55 @@ assert say_hello("Jeremy")=="Hello Jeremy!"
 # %%
 assert say_hello("Chris")!="Hello Jeremy!"
 
+
+# %% [markdown]
+# ## classes
+
 # %%
+#export
+class HelloSayer:
+    "Say hello to `to` using `say_hello`"
+    def __init__(self, to): 
+        "Define the object of the prospective saying"
+        self.to = to
+        
+    def __repr__(self):
+        "Represent instances for debugging"
+        repr = "to: %s" % (self.to)
+        return repr
+    
+    def __str__(self):
+        "Represent instances when printed (see https://stackoverflow.com/a/49282111/446907)"
+        return  str(self.__class__) + '\n' + '\n'.join((str(item) + ' = ' + str(self.__dict__[item]) for item in sorted(self.__dict__)))
+    
+    def say(self):
+        "Do the saying"
+        return say_hello(self.to)
+
+
+# %%
+show_doc(HelloSayer.say)
+
+# %% [markdown]
+# ### examples
+
+# %% [markdown]
+# We can define an instance of the class `HelloSayer` by passing the appropriate parameters to the constructor (in this case a single string containing the object of prospective saying).
+
+# %%
+o = HelloSayer("Alexis")
+
+# %% [markdown]
+# It is possible to simply print the `__dict__` associated to any instance of the object as:
+
+# %%
+print(o.__dict__)
+
+# %% [markdown]
+# This works even if there is no `__str__` method defined. Otherwise, it is probably better to use the internally defined `__repr__` and `__str__` as: 
+
+# %%
+print([o])
+print(o)
+print(o.to)
+o.say()
