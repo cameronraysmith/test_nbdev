@@ -12,6 +12,9 @@ entries:
     - output: web,pdf
       title: test_nbdev
       url: core.html
+    - output: web,pdf
+      title: Test julia
+      url: testjulia.html
     output: web
     title: test_nbdev
   output: web

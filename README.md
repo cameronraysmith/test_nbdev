@@ -12,7 +12,7 @@ This is the documentation for `test_nbdev`.
 
 Code examples:
 
-```
+```python
 say_hello("Wilbur")
 ```
 

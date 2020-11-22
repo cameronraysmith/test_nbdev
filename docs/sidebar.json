@@ -1,6 +1,7 @@
 {
   "test_nbdev": {
     "Overview": "/",
-    "test_nbdev": "core.html"
+    "test_nbdev": "core.html",
+    "Test julia": "testjulia.html"
   }
 }
