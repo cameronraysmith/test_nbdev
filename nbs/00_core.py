@@ -26,6 +26,9 @@
 from nbdev.showdoc import *
 
 
+# %% [markdown]
+# ## functions
+
 # %%
 #export
 def say_hello(to):
@@ -34,16 +37,16 @@ def say_hello(to):
 
 
 # %% [markdown]
-# ## examples
+# ### examples
 
 # %% [markdown]
-# ### run function
+# #### run function
 
 # %%
 say_hello("Wilbur")
 
 # %% [markdown]
-# ### make svg
+# #### make svg
 
 # %%
 from IPython.display import display,SVG
@@ -52,7 +55,7 @@ from IPython.display import display,SVG
 display(SVG('<svg height="100"><circle cx="50" cy="50" r="40"/></svg>'))
 
 # %% [markdown]
-# ## tests 
+# ### tests 
 
 # %%
 assert say_hello("Jeremy")=="Hello Jeremy!"

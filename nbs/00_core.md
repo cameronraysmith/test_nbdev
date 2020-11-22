@@ -26,6 +26,8 @@ jupyter:
 from nbdev.showdoc import *
 ```
 
+## functions
+
 ```python
 #export
 def say_hello(to):
@@ -33,16 +35,16 @@ def say_hello(to):
     return f'Hello {to}!'
 ```
 
-## examples
+### examples
 
 
-### run function
+#### run function
 
 ```python
 say_hello("Wilbur")
 ```
 
-### make svg
+#### make svg
 
 ```python
 from IPython.display import display,SVG
@@ -52,7 +54,7 @@ from IPython.display import display,SVG
 display(SVG('<svg height="100"><circle cx="50" cy="50" r="40"/></svg>'))
 ```
 
-## tests 
+### tests 
 
 ```python
 assert say_hello("Jeremy")=="Hello Jeremy!"
