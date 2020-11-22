@@ -272,6 +272,12 @@ nb_path: "nbs/00_core.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="create-instance">create instance<a class="anchor-link" href="#create-instance"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>We can define an instance of the class <a href="/test_nbdev/core.html#HelloSayer"><code>HelloSayer</code></a> by passing the appropriate parameters to the constructor (in this case a single string containing the object of prospective saying).</p>
 
 </div>
@@ -378,6 +384,321 @@ Alexis
 <pre>&#39;Hello Alexis!&#39;</pre>
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="interrogate-instance">interrogate instance<a class="anchor-link" href="#interrogate-instance"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you just want a list of the methods associated to an object, you can use a list comprehension as:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_object_methods</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">method_name</span> <span class="k">for</span> <span class="n">method_name</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+                  <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">method_name</span><span class="p">))]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">get_object_methods</span><span class="p">(</span><span class="n">o</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;__class__&#39;, &#39;__delattr__&#39;, &#39;__dir__&#39;, &#39;__eq__&#39;, &#39;__format__&#39;, &#39;__ge__&#39;, &#39;__getattribute__&#39;, &#39;__gt__&#39;, &#39;__hash__&#39;, &#39;__init__&#39;, &#39;__init_subclass__&#39;, &#39;__le__&#39;, &#39;__lt__&#39;, &#39;__ne__&#39;, &#39;__new__&#39;, &#39;__reduce__&#39;, &#39;__reduce_ex__&#39;, &#39;__repr__&#39;, &#39;__setattr__&#39;, &#39;__sizeof__&#39;, &#39;__str__&#39;, &#39;__subclasshook__&#39;, &#39;say&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If it is necessary to get a comprehensive listing of the contents of an object, use the <code>dir</code> function as:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;say&#39;,
+ &#39;to&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It is also possible to use the python <code>inspect</code> module to get more detailed information about the structure of an object:</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">inspect</span>
+<span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[(&#39;__class__&#39;, __main__.HelloSayer),
+ (&#39;__delattr__&#39;,
+  &lt;method-wrapper &#39;__delattr__&#39; of HelloSayer object at 0x7f47460ef580&gt;),
+ (&#39;__dict__&#39;, {&#39;to&#39;: &#39;Alexis&#39;}),
+ (&#39;__dir__&#39;, &lt;function HelloSayer.__dir__()&gt;),
+ (&#39;__doc__&#39;, &#39;Say hello to `to` using `say_hello`&#39;),
+ (&#39;__eq__&#39;, &lt;method-wrapper &#39;__eq__&#39; of HelloSayer object at 0x7f47460ef580&gt;),
+ (&#39;__format__&#39;, &lt;function HelloSayer.__format__(format_spec, /)&gt;),
+ (&#39;__ge__&#39;, &lt;method-wrapper &#39;__ge__&#39; of HelloSayer object at 0x7f47460ef580&gt;),
+ (&#39;__getattribute__&#39;,
+  &lt;method-wrapper &#39;__getattribute__&#39; of HelloSayer object at 0x7f47460ef580&gt;),
+ (&#39;__gt__&#39;, &lt;method-wrapper &#39;__gt__&#39; of HelloSayer object at 0x7f47460ef580&gt;),
+ (&#39;__hash__&#39;,
+  &lt;method-wrapper &#39;__hash__&#39; of HelloSayer object at 0x7f47460ef580&gt;),
+ (&#39;__init__&#39;, &lt;bound method HelloSayer.__init__ of to: Alexis&gt;),
+ (&#39;__init_subclass__&#39;, &lt;function HelloSayer.__init_subclass__&gt;),
+ (&#39;__le__&#39;, &lt;method-wrapper &#39;__le__&#39; of HelloSayer object at 0x7f47460ef580&gt;),
+ (&#39;__lt__&#39;, &lt;method-wrapper &#39;__lt__&#39; of HelloSayer object at 0x7f47460ef580&gt;),
+ (&#39;__module__&#39;, &#39;__main__&#39;),
+ (&#39;__ne__&#39;, &lt;method-wrapper &#39;__ne__&#39; of HelloSayer object at 0x7f47460ef580&gt;),
+ (&#39;__new__&#39;, &lt;function object.__new__(*args, **kwargs)&gt;),
+ (&#39;__reduce__&#39;, &lt;function HelloSayer.__reduce__()&gt;),
+ (&#39;__reduce_ex__&#39;, &lt;function HelloSayer.__reduce_ex__(protocol, /)&gt;),
+ (&#39;__repr__&#39;, &lt;bound method HelloSayer.__repr__ of to: Alexis&gt;),
+ (&#39;__setattr__&#39;,
+  &lt;method-wrapper &#39;__setattr__&#39; of HelloSayer object at 0x7f47460ef580&gt;),
+ (&#39;__sizeof__&#39;, &lt;function HelloSayer.__sizeof__()&gt;),
+ (&#39;__str__&#39;, &lt;bound method HelloSayer.__str__ of to: Alexis&gt;),
+ (&#39;__subclasshook__&#39;, &lt;function HelloSayer.__subclasshook__&gt;),
+ (&#39;__weakref__&#39;, None),
+ (&#39;say&#39;, &lt;bound method HelloSayer.say of to: Alexis&gt;),
+ (&#39;to&#39;, &#39;Alexis&#39;)]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can also simply call the help function on your instance.</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">?</span>help
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre><span class="ansi-red-fg">Signature:</span>   help<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwds<span class="ansi-blue-fg">)</span>
+<span class="ansi-red-fg">Type:</span>        _Helper
+<span class="ansi-red-fg">String form:</span> Type help() for interactive help, or help(object) for help about object.
+<span class="ansi-red-fg">Namespace:</span>   Python builtin
+<span class="ansi-red-fg">File:</span>        /usr/lib/python3.8/_sitebuiltins.py
+<span class="ansi-red-fg">Docstring:</span>  
+Define the builtin &#39;help&#39;.
+
+This is a wrapper around pydoc.help that provides a helpful message
+when &#39;help&#39; is typed at the Python interactive prompt.
+
+Calling help() at the Python prompt starts an interactive help session.
+Calling help(thing) prints help for the python object &#39;thing&#39;.
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Help on HelloSayer in module __main__ object:
+
+class HelloSayer(builtins.object)
+ |  HelloSayer(to)
+ |  
+ |  Say hello to `to` using `say_hello`
+ |  
+ |  Methods defined here:
+ |  
+ |  __init__(self, to)
+ |      Define the object of the prospective saying
+ |  
+ |  __repr__(self)
+ |      Represent instances for debugging
+ |  
+ |  __str__(self)
+ |      Represent instances when printed
+ |  
+ |  say(self)
+ |      Do the saying
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+
+</pre>
+</div>
 </div>
 
 </div>

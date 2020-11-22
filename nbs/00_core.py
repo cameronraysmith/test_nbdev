@@ -93,6 +93,9 @@ show_doc(HelloSayer.say)
 # ### examples
 
 # %% [markdown]
+# #### create instance
+
+# %% [markdown]
 # We can define an instance of the class `HelloSayer` by passing the appropriate parameters to the constructor (in this case a single string containing the object of prospective saying).
 
 # %%
@@ -112,3 +115,43 @@ print([o])
 print(o)
 print(o.to)
 o.say()
+
+
+# %% [markdown]
+# #### interrogate instance
+
+# %% [markdown]
+# If you just want a list of the methods associated to an object, you can use a list comprehension as:
+
+# %%
+def get_object_methods(object):
+    return [method_name for method_name in dir(object)
+                  if callable(getattr(object, method_name))]
+
+
+# %%
+print(get_object_methods(o))
+
+# %% [markdown]
+# If it is necessary to get a comprehensive listing of the contents of an object, use the `dir` function as:
+
+# %%
+dir(o)
+
+# %% [markdown]
+# It is also possible to use the python `inspect` module to get more detailed information about the structure of an object:
+
+# %%
+import inspect
+inspect.getmembers(o)
+
+# %% [markdown]
+# You can also simply call the help function on your instance.
+
+# %%
+# ?help
+
+# %%
+help(o)
+
+# %%
