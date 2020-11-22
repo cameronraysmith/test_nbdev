@@ -17,7 +17,7 @@ jupyter:
 # default_exp core
 ```
 
-# module name here
+# test_nbdev
 
 > API details.
 

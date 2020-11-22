@@ -17,7 +17,7 @@
 # default_exp core
 
 # %% [markdown]
-# # module name here
+# # test_nbdev
 #
 # > API details.
 
