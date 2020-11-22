@@ -35,3 +35,6 @@ dist: clean
 
 clean:
 	rm -rf dist
+
+downgrade-nbconvert:
+	pip install nbconvert==5.6.1
