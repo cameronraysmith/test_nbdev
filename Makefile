@@ -39,5 +39,8 @@ clean:
 downgrade-nbconvert:
 	pip install nbconvert==5.6.1
 
-setup: downgrade-nbconvert
+install-twine:
+	pip install twine
+
+setup: downgrade-nbconvert install-twine
 	nbdev_install_git_hooks
